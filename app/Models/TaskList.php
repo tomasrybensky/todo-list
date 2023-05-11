@@ -24,10 +24,4 @@ class TaskList extends Model
         return $this->hasMany(Task::class)
             ->orderBy(Task::IS_COMPLETED);
     }
-
-    public function completedTasks(): HasMany
-    {
-        return $this->tasks()
-            ->where(Task::IS_COMPLETED, true);
-    }
 }
