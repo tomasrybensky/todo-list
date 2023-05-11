@@ -18,6 +18,10 @@ class Task extends Model
         self::IS_COMPLETED,
     ];
 
+    protected $casts = [
+        self::IS_COMPLETED => 'boolean',
+    ];
+
     public function taskList(): BelongsTo
     {
         return $this->belongsTo(TaskList::class);
